@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>gtang blog</title><link href="/" rel="alternate"></link><link href="/feeds/ml.atom.xml" rel="self"></link><id>/</id><updated>2015-08-15T00:00:00+02:00</updated><entry><title>机器学习算法复习1</title><link href="/ji-qi-xue-xi-suan-fa-fu-xi-1.html" rel="alternate"></link><updated>2015-08-15T00:00:00+02:00</updated><author><name>gantang</name></author><id>tag:,2015-08-15:ji-qi-xue-xi-suan-fa-fu-xi-1.html</id><summary type="html">&lt;h3&gt;决策树&lt;/h3&gt;
+&lt;p&gt;叶子节点：类标，输出值&lt;/p&gt;
+&lt;p&gt;内部节点：某个输入属性&lt;/p&gt;
+&lt;p&gt;根据一个指标，划分训练集。在每个训练集里递归，当类标都相同时（最终的叶子节点值相同），递归停止。（贪心）&lt;/p&gt;</summary><category term=""></category></entry></feed>
