@@ -2,7 +2,7 @@
 <html lang="">	
 <head>
 	<meta charset="utf-8"/>
-	<title>gtang blog</title>	
+	<title>decision_tree - gtang blog</title>	
 	<meta name="author" content="gantang">
 	
 
@@ -28,29 +28,55 @@
 
 		  <div role="main" class="content">
 
+<h1>Post tagged: decision_tree</h1>
 
-
-      <article>
-        <h1><a href="/new-blog-test.html">new blog test</a></h1>
-        <h4>test for new blog.</h4>
-      </article>
-
-      <hr />
-
-        <div>
-          <h3>Last posts</h3>
-          <ol class="archive">
-    
-
-
-      <li>
-<a href="/ji-qi-xue-xi-suan-fa-fu-xi-1.html" rel="bookmark" title="Permalink to 机器学习算法复习1">机器学习算法复习1</a>
+<article class="summary">
+<div class="metadata">
   <time datetime="2015-08-15T00:00:00+02:00" pubdate>六 15 8月 2015</time>
-<p class="tags">tags: <a href="/tag/decision_tree.html">decision_tree</a></p></a>      </li>
+    <address class="vcard author">
+      by <a class="url fn" href="/author/gantang.html">gantang</a>
+    </address>
+  in <a href="/category/ml.html">ML</a>
+<p class="tags">tagged <a href="/tag/decision_tree.html">decision_tree</a></p></div>  <div>
+    <h2>
+      <a href="/ji-qi-xue-xi-suan-fa-fu-xi-1.html" rel="bookmark" title="Permalink to 机器学习算法复习1">机器学习算法复习1</a>
+    </h2>
+    <p><h3>决策树</h3>
+<div class="highlight"><pre>叶子节点：类标，输出值
+内部节点：某个输入属性
+</pre></div>
 
 
-          </ol>
-        </div>
+<h5>训练</h5>
+<p>根据一个指标，划分训练集。在每个训练集里递归，当类标都相同时（最终的叶子节点值相同），递归停止。（贪心）</p>
+<p>分裂属性</p>
+<ol>
+<li>离散<ul>
+<li>要求二叉：设一个子集，属于／不属于</li>
+<li>不要求二叉：每个属性为一个分支</li>
+</ul>
+</li>
+<li>连续<ul>
+<li>设一个split_point, &gt;/&lt;=</li>
+</ul>
+</li>
+</ol>
+<p>如何选择下一个分裂哪个属性？</p>
+<div class="highlight"><pre>对信息熵增益最大的一个
+总信息熵－属性i的信息熵＝增益
+增益最大，即i的信息熵最小，纯度最高，更容易生成叶子节点（只有一个类）
+</pre></div>
+
+
+<p>算法</p>
+<p>ID3</p>
+<div class="highlight"><pre>信息熵：info(D) = - 加和 Pi*logPi
+属性A的信息熵： infoA(D) = 加和 Dj/D *infor(Dj ...</pre></div></p>
+  </div>
+</article>
+<div class="pagination">
+    Page 1 / 1
+</div>
 
 		  </div>	
 		  

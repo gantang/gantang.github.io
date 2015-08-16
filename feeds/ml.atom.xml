@@ -1,5 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>gtang blog</title><link href="/" rel="alternate"></link><link href="/feeds/ml.atom.xml" rel="self"></link><id>/</id><updated>2015-08-15T00:00:00+02:00</updated><entry><title>机器学习算法复习1</title><link href="/ji-qi-xue-xi-suan-fa-fu-xi-1.html" rel="alternate"></link><updated>2015-08-15T00:00:00+02:00</updated><author><name>gantang</name></author><id>tag:,2015-08-15:ji-qi-xue-xi-suan-fa-fu-xi-1.html</id><summary type="html">&lt;h3&gt;决策树&lt;/h3&gt;
-&lt;p&gt;叶子节点：类标，输出值&lt;/p&gt;
-&lt;p&gt;内部节点：某个输入属性&lt;/p&gt;
-&lt;p&gt;根据一个指标，划分训练集。在每个训练集里递归，当类标都相同时（最终的叶子节点值相同），递归停止。（贪心）&lt;/p&gt;</summary><category term=""></category></entry></feed>
+&lt;div class="highlight"&gt;&lt;pre&gt;叶子节点：类标，输出值
+内部节点：某个输入属性
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h5&gt;训练&lt;/h5&gt;
+&lt;p&gt;根据一个指标，划分训练集。在每个训练集里递归，当类标都相同时（最终的叶子节点值相同），递归停止。（贪心）&lt;/p&gt;
+&lt;p&gt;分裂属性&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;离散&lt;ul&gt;
+&lt;li&gt;要求二叉：设一个子集，属于／不属于&lt;/li&gt;
+&lt;li&gt;不要求二叉：每个属性为一个分支&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;连续&lt;ul&gt;
+&lt;li&gt;设一个split_point, &amp;gt;/&amp;lt;=&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如何选择下一个分裂哪个属性？&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;对信息熵增益最大的一个
+总信息熵－属性i的信息熵＝增益
+增益最大，即i的信息熵最小，纯度最高，更容易生成叶子节点（只有一个类）
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;算法&lt;/p&gt;
+&lt;p&gt;ID3&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;信息熵：info(D) = - 加和 Pi*logPi
+属性A的信息熵： infoA(D) = 加和 Dj/D *infor(Dj)
+增益：gain(A) = info(D) - infoA(D)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;C4.5&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;split_infoA(D) = - 加和 Dj/D * log Dj/D
+gain_ratio(A) = gain(A)/split_info(A)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;若属性都用完了，还有子集不纯净，采用多数表决&lt;/p&gt;
+&lt;p&gt;为解决噪声点和过度拟合等问题，要剪枝（先剪，后剪）&lt;/p&gt;</summary><category term="decision_tree"></category></entry></feed>

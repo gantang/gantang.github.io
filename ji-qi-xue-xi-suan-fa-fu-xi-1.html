@@ -6,7 +6,7 @@
 	<meta name="author" content="gantang">
 	
 
-	<meta name="description" content="决策树 叶子节点：类标，输出值 内部节点：某个输入属性 根据一个指标，划分训练集。在每个训练集里递归，当类标都相同时（最终的叶子节点值相同），递归停止。（贪心）">
+	<meta name="description" content="决策树 叶子节点：类标，输出值 内部节点：某个输入属性 训练 根据一个指标，划分训练集。在每个训练集里递归，当类标都相同时（最终的叶子节点值相同），递归停止。（贪心） 分裂属性 离散 要求二叉：设一个子集，属于／不属于 不要求二叉：每个属性为一个分支 连续 设一个split_point, >/<= 如何选择下一个分裂哪个属性？ 对信息熵增益最大的一个 总信息熵－属性i的信息熵＝增益 增益最大，即i的信息熵最小，纯度最高，更容易生成叶子节点（只有一个类） 算法 ID3 信息熵：info(D) = - 加和 Pi*logPi 属性A的信息熵： infoA(D) = 加和 Dj/D *infor(Dj ...">
 
 
 	<link rel="top" href="#" /><link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic|Source+Code+Pro' rel='stylesheet' type='text/css'></link>
@@ -40,11 +40,50 @@
       by <a class="url fn" href="/author/gantang.html">gantang</a>
     </address>
   in <a href="/category/ml.html">ML</a>
-<p class="tags">tagged <a href="/tag/.html"></a></p></div>		
+<p class="tags">tagged <a href="/tag/decision_tree.html">decision_tree</a></p></div>		
 		<h3>决策树</h3>
-<p>叶子节点：类标，输出值</p>
-<p>内部节点：某个输入属性</p>
-<p>根据一个指标，划分训练集。在每个训练集里递归，当类标都相同时（最终的叶子节点值相同），递归停止。（贪心）</p>	
+<div class="highlight"><pre>叶子节点：类标，输出值
+内部节点：某个输入属性
+</pre></div>
+
+
+<h5>训练</h5>
+<p>根据一个指标，划分训练集。在每个训练集里递归，当类标都相同时（最终的叶子节点值相同），递归停止。（贪心）</p>
+<p>分裂属性</p>
+<ol>
+<li>离散<ul>
+<li>要求二叉：设一个子集，属于／不属于</li>
+<li>不要求二叉：每个属性为一个分支</li>
+</ul>
+</li>
+<li>连续<ul>
+<li>设一个split_point, &gt;/&lt;=</li>
+</ul>
+</li>
+</ol>
+<p>如何选择下一个分裂哪个属性？</p>
+<div class="highlight"><pre>对信息熵增益最大的一个
+总信息熵－属性i的信息熵＝增益
+增益最大，即i的信息熵最小，纯度最高，更容易生成叶子节点（只有一个类）
+</pre></div>
+
+
+<p>算法</p>
+<p>ID3</p>
+<div class="highlight"><pre>信息熵：info(D) = - 加和 Pi*logPi
+属性A的信息熵： infoA(D) = 加和 Dj/D *infor(Dj)
+增益：gain(A) = info(D) - infoA(D)
+</pre></div>
+
+
+<p>C4.5</p>
+<div class="highlight"><pre>split_infoA(D) = - 加和 Dj/D * log Dj/D
+gain_ratio(A) = gain(A)/split_info(A)
+</pre></div>
+
+
+<p>若属性都用完了，还有子集不纯净，采用多数表决</p>
+<p>为解决噪声点和过度拟合等问题，要剪枝（先剪，后剪）</p>	
 
 	</article>
 
